@@ -28,4 +28,29 @@ rule build_cmj_cmi
 build re/App.cmj |  $src_root_dir/lib/js/re/App.js re/App.cmi : build_cmj_cmi re/App.mlast
   bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
   bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/re
-build build.ninja : phony  ||  re/App.mlast.d
+build re/Home.mlast : build_ast_and_module_sets_from_re $src_root_dir/re/Home.re
+build re/Home.mlast.d : build_deps re/Home.mlast
+build re/Home.cmj |  $src_root_dir/lib/js/re/Home.js re/Home.cmi : build_cmj_cmi re/Home.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/re
+build re/Title.mlast : build_ast_and_module_sets_from_re $src_root_dir/re/Title.re
+build re/Title.mlast.d : build_deps re/Title.mlast
+build re/Title.cmj |  $src_root_dir/lib/js/re/Title.js re/Title.cmi : build_cmj_cmi re/Title.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/re
+build re/MyButton.mlast : build_ast_and_module_sets_from_re $src_root_dir/re/MyButton.re
+build re/MyButton.mlast.d : build_deps re/MyButton.mlast
+build re/MyButton.cmj |  $src_root_dir/lib/js/re/MyButton.js re/MyButton.cmi : build_cmj_cmi re/MyButton.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/re
+build re/DummyButton.mlast : build_ast_and_module_sets_from_re $src_root_dir/re/DummyButton.re
+build re/DummyButton.mlast.d : build_deps re/DummyButton.mlast
+build re/DummyButton.cmj |  $src_root_dir/lib/js/re/DummyButton.js re/DummyButton.cmi : build_cmj_cmi re/DummyButton.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/re
+build re/UpdateStateButton.mlast : build_ast_and_module_sets_from_re $src_root_dir/re/UpdateStateButton.re
+build re/UpdateStateButton.mlast.d : build_deps re/UpdateStateButton.mlast
+build re/UpdateStateButton.cmj |  $src_root_dir/lib/js/re/UpdateStateButton.js re/UpdateStateButton.cmi : build_cmj_cmi re/UpdateStateButton.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:lib/js/re
+build build.ninja : phony  ||  re/UpdateStateButton.mlast.d re/DummyButton.mlast.d re/MyButton.mlast.d re/Title.mlast.d re/Home.mlast.d re/App.mlast.d

@@ -6,9 +6,9 @@ let styles = StyleSheet.create(
   Style.({
     "container": style([
       flex(1.),
-      justifyContent(Center),
+      justifyContent(SpaceAround),
       alignItems(Center),
-      backgroundColor(String("salmon"))
+      backgroundColor(String("ivory"))
     ])
   })
 );
@@ -18,6 +18,8 @@ let make = (~title=?, _children) => {
   render: (self) => (
     <View style=styles##container>
       <Title value=?title />
+      <DummyButton />
+      <UpdateStateButton />
     </View>
   )
 }

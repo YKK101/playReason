@@ -5,7 +5,7 @@ let component = ReasonReact.statelessComponent("Title")
 let styles = StyleSheet.create(
   Style.({
     "text": style([
-      color(String("white")),
+      color(String("#333")),
       fontSize(Float(20.)),
       fontWeight(`Bold) 
     ])

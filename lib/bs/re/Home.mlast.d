@@ -1,1 +1,1 @@
-re/Home.cmj : re/Title.cmj
+re/Home.cmj : re/DummyButton.cmj re/Title.cmj re/UpdateStateButton.cmj
