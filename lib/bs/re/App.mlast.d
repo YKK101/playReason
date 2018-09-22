@@ -1,1 +1,1 @@
-re/App.cmj :
+re/App.cmj : re/Home.cmj
